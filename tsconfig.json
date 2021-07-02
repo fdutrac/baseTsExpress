@@ -2,13 +2,16 @@
   "compilerOptions": {
     "target": "es2017",
     "module": "commonjs",
-    "lib": ["es6"],
+    "lib": [
+      "es6"
+    ],
     "allowJs": true,
     "removeComments": true,
-    "strict": true,
+    // "strict": true,
+    "sourceMap": true,
     "typeRoots": [
       "./node_modules/@types",
-      "./src/@types"
+      "./src/@types/*.ts"
     ],
     "esModuleInterop": true,
     "experimentalDecorators": true,
@@ -18,10 +21,21 @@
     "forceConsistentCasingInFileNames": true,
     "baseUrl": ".",
     "paths": {
-      "@controllers/*": ["./src/controllers/*"],
-      "@models/*": ["./src/models/*"],
-      "@config/*": ["./src/config/*"],
-      "@validation/*": ["./src/validation/*"],
+      "@repositories/*": [
+        "src/repositories/*"
+      ],
+      "@services/*": [
+        "src/services/*"
+      ],
+      "@config/*": [
+        "src/config/*"
+      ],
+      "@controllers/*": [
+        "src/controllers/*"
+      ],
+      "@validation/*": [
+        "src/validation/*"
+      ],
     }
   }
 }
