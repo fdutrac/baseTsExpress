@@ -1,7 +1,7 @@
 import { Request, Response } from "express";
 import { UserService } from "@services/User";
 
-export class UserController {
+export class ClientController {
   static add = async (req: Request, res: Response) => {
     try {
       console.log(req.body);

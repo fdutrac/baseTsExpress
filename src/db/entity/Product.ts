@@ -14,6 +14,15 @@ export class Product {
   @Column("integer")
   amount: number;
 
-  @Column("timestamp")
-  boughtAt: Date;
+  @Column("text", { nullable: true })
+  description: string;
+
+  @Column("date")
+  boughtDate: Date;
+
+  @Column("time")
+  boughtTime: Date;
+
+  @Column("timestamp", { nullable: true })
+  validUntil: Date;
 }

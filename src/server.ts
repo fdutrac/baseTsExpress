@@ -3,6 +3,9 @@ import config from "../config";
 import routes from "./routes";
 import { dbConnection } from "./db/index";
 import "reflect-metadata";
+import dotenv from "dotenv";
+
+dotenv.config();
 
 const port = config.port as number;
 const host = config.host as string;

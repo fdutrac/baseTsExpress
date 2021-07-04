@@ -2,5 +2,8 @@ export interface IProduct {
   name: string;
   price: number;
   amount: number;
-  boughtAt: Date;
+  description: string;
+  boughtTime: Date;
+  boughtDate: Date;
+  validUntil: Date;
 }
