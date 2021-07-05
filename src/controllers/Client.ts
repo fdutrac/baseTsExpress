@@ -1,14 +1,14 @@
 import { Request, Response } from "express";
-import { UserService } from "@services/User";
+import { ClientService } from "@services/Client";
 
 export class ClientController {
   static add = async (req: Request, res: Response) => {
     try {
       console.log(req.body);
-      const userService = new UserService();
-      const user = await userService.add(req.body);
-      console.log(user);
-      res.json(user);
+      const clientService = new ClientService();
+      const client = await clientService.add(req.body);
+      console.log(client);
+      res.json(client);
     } catch (error) {
       res.json(error);
     }
@@ -16,9 +16,9 @@ export class ClientController {
 
   static list = async (req: Request, res: Response) => {
     try {
-      const userService = new UserService();
-      const user = await userService.list(req.query);
-      res.json(user);
+      const clientService = new ClientService();
+      const client = await clientService.list(req.query);
+      res.json(client);
     } catch (error) {
       res.json(error);
     }

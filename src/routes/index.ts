@@ -13,4 +13,5 @@ export default function (app: Express) {
   app.get("/client", ClientController.list);
   app.post("/client", ClientController.add);
   app.post("/scrape", Scraper.scrapeClassName);
+  app.post("/login-and-scrape", Scraper.loginAndScrape);
 }

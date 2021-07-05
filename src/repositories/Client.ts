@@ -5,13 +5,14 @@ import { getConnection } from "typeorm";
 
 export class ClientRepository implements IRepository {
   async add(client: IClient) {
-    const repository = getConnection().getRepository("User");
+    console.log(client);
+    const repository = getConnection().getRepository("Client");
     const result = repository.save(client);
     return result;
   }
 
   async list(param?: ParseOptions) {
-    const repository = getConnection().getRepository("User");
+    const repository = getConnection().getRepository("Client");
     const result = repository.find(param);
     return result;
   }
