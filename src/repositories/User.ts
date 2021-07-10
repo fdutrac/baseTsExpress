@@ -6,13 +6,13 @@ import { getConnection } from "typeorm";
 export class UserRepository implements IRepository {
   async add(user: IUser) {
     const repository = getConnection().getRepository("User");
-    const result = repository.save(user);
+    const result = await repository.save(user);
     return result;
   }
 
   async list(param?: ParseOptions) {
     const repository = getConnection().getRepository("User");
-    const result = repository.find(param);
+    const result = await repository.find(param);
     return result;
   }
 }

@@ -16,4 +16,10 @@ export class ClientRepository implements IRepository {
     const result = repository.find(param);
     return result;
   }
+
+  async delete(id: string) {
+    const repository = getConnection().getRepository("Client");
+    const result = repository.delete(id);
+    return result;
+  }
 }

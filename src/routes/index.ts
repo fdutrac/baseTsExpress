@@ -2,7 +2,7 @@ import { Express, Request, Response } from "express";
 import { UserController } from "@controllers/User";
 import { ProductController } from "@controllers/Product";
 import { ClientController } from "@controllers/Client";
-import { Scraper } from "src/scraper/scraper";
+import { ScraperController } from "@controllers/Scraper";
 
 export default function (app: Express) {
   app.get("/", (req: Request, res: Response) => res.status(200));
@@ -12,6 +12,7 @@ export default function (app: Express) {
   app.post("/product", ProductController.add);
   app.get("/client", ClientController.list);
   app.post("/client", ClientController.add);
-  app.post("/scrape", Scraper.scrapeClassName);
-  app.post("/login-and-scrape", Scraper.loginAndScrape);
+  app.delete("/client/:id", ClientController.delete);
+  app.post("/scraper/get_name", ScraperController.getName);
+  app.post("/scraper/get_friends", ScraperController.getFriends);
 }

@@ -14,9 +14,6 @@ export class Product {
   @Column("integer")
   amount: number;
 
-  @Column("text", { nullable: true })
-  description: string;
-
   @Column("date")
   boughtDate: Date;
 
@@ -25,4 +22,19 @@ export class Product {
 
   @Column("timestamp", { nullable: true })
   validUntil: Date;
+
+  @Column("char", { length: 10 })
+  barCode: string;
+
+  @Column("text")
+  description: string;
+
+  @Column("boolean")
+  active: boolean;
+
+  @Column("json")
+  fakeAPI: string;
+
+  @Column("simple-array")
+  sizes: string[];
 }

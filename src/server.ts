@@ -8,7 +8,6 @@ import dotenv from "dotenv";
 dotenv.config();
 
 const port = config.port as number;
-const host = config.host as string;
 
 dbConnection();
 
@@ -21,7 +20,7 @@ app.get("/", (req: Request, res: Response) => {
   return res.json({ message: "Oe mundão" });
 });
 
-app.listen(port, host, () => {
-  console.log(`Server listing at http://${host}:${port}`);
+app.listen(process.env.PORT || port, () => {
+  console.log(`Server listening in port ${process.env.PORT || port}`);
   routes(app);
 });

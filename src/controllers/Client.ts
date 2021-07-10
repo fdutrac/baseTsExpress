@@ -23,4 +23,14 @@ export class ClientController {
       res.json(error);
     }
   };
+
+  static delete = async (req: Request, res: Response) => {
+    try {
+      const clientService = new ClientService();
+      const client = await clientService.delete(req.params.id);
+      res.json(client);
+    } catch (error) {
+      res.json(error);
+    }
+  };
 }

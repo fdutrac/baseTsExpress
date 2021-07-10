@@ -15,4 +15,9 @@ export class ClientService implements IRepository {
     const result = this.repository.list(param);
     return result;
   }
+
+  async delete(id: string) {
+    const result = this.repository.delete(id);
+    return result;
+  }
 }
