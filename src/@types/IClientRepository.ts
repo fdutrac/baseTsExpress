@@ -1,8 +1,8 @@
 import { ParseOptions } from "querystring";
 
-import { IClient } from "./ClientInterface";
+import { IClient } from "./IClient";
 
-export interface IRepository {
+export interface IClientRepository {
   add: (client?: IClient) => {};
   list: (parameter: ParseOptions) => {};
   delete: (id: string) => {};

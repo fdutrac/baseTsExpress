@@ -1,8 +1,8 @@
 import { ParseOptions } from "querystring";
 
-import { IProduct } from "./ProductInterface";
+import { IProduct } from "./IProduct";
 
-export interface IRepository {
+export interface IProductRepository {
   add: (product?: IProduct) => {};
   list: (parameter: ParseOptions) => {};
 }

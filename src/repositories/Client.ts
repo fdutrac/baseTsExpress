@@ -1,9 +1,9 @@
 import { ParseOptions } from "querystring";
-import { IClient } from "src/@types/ClientInterface";
-import { IRepository } from "src/@types/ClientRepositoryInterface";
+import { IClient } from "src/@types/IClient";
+import { IClientRepository } from "src/@types/IClientRepository";
 import { getConnection } from "typeorm";
 
-export class ClientRepository implements IRepository {
+export class ClientRepository implements IClientRepository {
   async add(client: IClient) {
     console.log(client);
     const repository = getConnection().getRepository("Client");

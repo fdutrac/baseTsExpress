@@ -1,9 +1,9 @@
 import { ParseOptions } from "querystring";
-import { IUser } from "src/@types/UserInterface";
-import { IRepository } from "src/@types/UserRepositoryInterface";
+import { IUser } from "src/@types/IUser";
+import { IUserRepository } from "src/@types/IUserRepository";
 import { getConnection } from "typeorm";
 
-export class UserRepository implements IRepository {
+export class UserRepository implements IUserRepository {
   async add(user: IUser) {
     const repository = getConnection().getRepository("User");
     const result = await repository.save(user);

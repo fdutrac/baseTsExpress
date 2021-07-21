@@ -1,8 +1,8 @@
 import { ParseOptions } from "querystring";
 
-import { IUser } from "./UserInterface";
+import { IUser } from "./IUser";
 
-export interface IRepository {
+export interface IUserRepository {
   add: (user?: IUser) => {};
   list: (parameter: ParseOptions) => {};
 }

@@ -15,4 +15,6 @@ export default function (app: Express) {
   app.delete("/client/:id", ClientController.delete);
   app.post("/scraper/get_name", ScraperController.getName);
   app.post("/scraper/get_friends", ScraperController.getFriends);
+  app.post("/scraper/parsePDF", ScraperController.scrapeCNH);
+  
 }

@@ -6,8 +6,7 @@ export class Scraper {
     try {
       const userName: string = await page.evaluate(
         () =>
-          document.querySelector(".a8c37x1j.ni8dbmo4.stjgntxs.l9j0dhe7")
-            .innerText
+          document.querySelector(".a8c37x1j.ni8dbmo4.stjgntxs.l9j0dhe7").innerText
       );
 
       const client = {
@@ -89,6 +88,7 @@ export class Scraper {
           "publicou",
           "mencionou",
           "mencionaram",
+          "solicitação"
         ];
 
         // Returns Friends List with numbers filtered
@@ -109,6 +109,7 @@ export class Scraper {
 
         const menuIndex = menuToScroll.length;
         const boundingBox = await menuToScroll[menuIndex - 1].boundingBox();
+        console.log(boundingBox)
         await page.mouse.move(
           boundingBox.x + boundingBox.width / 2,
           boundingBox.y + boundingBox.height / 2
